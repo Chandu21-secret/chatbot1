@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image:url(chat1.jpg)
+    background-image:url(BG.jpg)
     
     
   }
@@ -29,7 +29,7 @@
    
   }
   
-  .header {
+  .google-search {
     background-color: #075e54;
     color: white;
     padding: 15px;
@@ -123,4 +123,38 @@
     }
 }
   
-  
+
+
+
+
+
+.google-search form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.google-search input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.google-search button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #4285f4;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+
+
+

@@ -1,7 +1,7 @@
 // script.js
 function sendMessage() {
     const userInput = document.getElementById("userInput");
-    const chatbox = document.getElementById("chatbox");
+    const chatbox = document.getElementById("chatbox");      
     const messageText = userInput.value.trim();
   
     // If the user input is not empty
@@ -99,5 +99,7 @@ function sendMessage() {
       chatbox.appendChild(button);
     });
   }
+
+
 
   
