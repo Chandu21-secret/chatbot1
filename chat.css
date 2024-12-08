@@ -1,0 +1,113 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image:url(chat1.jpg)
+    
+    
+  }
+  
+  .chat-container {
+    width: 360px;
+    height: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(9, 10, 9, 0.925);
+    display: flex;
+    flex-direction: column;
+    background-image: url(chat.jpg);
+    background-size: cover;
+   
+  }
+  
+  .header {
+    background-color: #075e54;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    
+  }
+  
+  .chatbox {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f7f7f7;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0px 3px 15px rgba(113, 115, 119, 1.5);
+    background: transparent;
+  }
+  
+  .input-container {
+    display: flex;
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  #userInput {
+    width: 85%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #075e54;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #dbe7dd;
+    box-shadow: -8px -8px 15px rgba(243, 243, 240, 0.767);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #128c7e;
+  }
+  
+  .message {
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+  
+  .message.user {
+    background-color: #0f55b0;
+    align-self: flex-end;
+    margin-left: auto;
+    color: #dbe7dd;
+    box-shadow: -8px -8px 15px rgba(12, 12, 11, 0.767);
+    
+  }
+  
+  .message.bot {
+    background-color: #721448;
+    border: 1px solid #ccc;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+    color:white
+        
+  }
+
+  
+  
+  
