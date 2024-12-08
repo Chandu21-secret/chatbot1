@@ -108,6 +108,19 @@
         
   }
 
-  
+  @media (max-width: 900px) and (min-width: 600px) {
+    .chatbot {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+/* Media Query for Mobile (Width less than 600px) */
+@media (max-width: 600px) {
+    .chatbot {
+        width: 100%;
+        height: 300px;
+    }
+}
   
   
