@@ -11,13 +11,15 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-size: cover;
     background-image:url(BG.jpg)
+    
     
     
   }
   
   .chat-container {
-    width: 360px;
+    width: 370px;
     height: 600px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -26,17 +28,23 @@
     flex-direction: column;
     background-image: url(chat.jpg);
     background-size: cover;
+    overflow-y: scroll;
    
   }
   
   .google-search {
     background-color: #075e54;
     color: white;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    position: sticky;
+    top:0;
+    width: 100%;
+    z-index: 1000;
+
+       
     
   }
   
@@ -46,37 +54,60 @@
     overflow-y: auto;
     background-color: #f7f7f7;
     border-bottom: 2px solid #ddd;
-    box-shadow: 0px 3px 15px rgba(113, 115, 119, 1.5);
-    background: transparent;
+    position: sticky
+    
   }
   
   .input-container {
     display: flex;
-    padding: 10px;
     background-color: #ffffff;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background: transparent;
+    gap: 0.5px;
+    border-top: 1px solid #ddd;
+    position: sticky;
+   
+       
   }
+
+  .input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    
+}
+
+  
   
   #userInput {
-    width: 85%;
+    width: 100%;
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #ccc;
-    margin-right: 10px;
+    margin-top: 480px;
+    
+    
+    
+  
   }
   
+  
   button {
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #075e54;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     color: #dbe7dd;
-    box-shadow: -8px -8px 15px rgba(243, 243, 240, 0.767);
-    cursor: pointer;
+    box-shadow: -8px -8px 15px rgba(243, 243, 240, 0.767); 
+           
+    
   }
+
+  
   
   button:hover {
     background-color: #128c7e;
@@ -88,6 +119,7 @@
     margin-bottom: 10px;
     max-width: 70%;
     word-wrap: break-word;
+    
   }
   
   .message.user {
@@ -137,7 +169,7 @@
 
 .google-search input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   margin-right: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -147,14 +179,50 @@
 .google-search button {
   padding: 8px 12px;
   border: none;
-  background-color: #4285f4;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 18px;
+  background:transparent;
 }
 
 
+.voice-search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
 
+#voice-search-btn {
+  color: white;
+  font-size: 20px;
+  background: transparent;
+}
+
+
+.chat-output {
+ 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow-y: auto;
+  font-size: 50px;
+  background: transparent;
+  color: red;
+}
+
+#send{
+  padding: 10px;
+  background-color: #075e54;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  color: #dbe7dd;
+  box-shadow: -8px -8px 15px rgba(243, 243, 240, 0.767);
+  cursor: pointer;
+  margin-top: 480px;
+  
+
+}
 

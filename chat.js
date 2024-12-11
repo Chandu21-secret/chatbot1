@@ -68,6 +68,7 @@ function sendMessage() {
       return "I'm not sure what you mean, could you clarify?";
     }
   }
+
   
 
   function createOptions() {
@@ -101,5 +102,85 @@ function sendMessage() {
   }
 
 
+  // Check if SpeechRecognition is supported
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!SpeechRecognition) {
+    alert("Your browser does not support Voice Search. Please use Google Chrome or Edge.");
+} else {
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-US"; // Set the language
+    recognition.interimResults = false; // Only show final results
+    recognition.continuous = false; // Stop after one phrase
+
+    const searchInput = document.getElementById("search-input");
+    const voiceSearchBtn = document.getElementById("voice-search-btn");
+    const searchBtn = document.getElementById("search-btn");
+
+    // Start recognition on button click
+    voiceSearchBtn.addEventListener("click", () => {
+      const listeningMessage = document.createElement("div");
+        listeningMessage.classList.add("message", "bot");
+        listeningMessage.textContent = "Listening...";
+        chatbox.appendChild(listeningMessage);
+        chatbox.scrollTop = chatbox.scrollHeight;
+
+
+        // Wait for the tone to finish before starting speech recognition
+        const startTone = new Audio('tone.mp3'); // Use the correct path for tone.mp3
+        startTone.play();
+
+        startTone.addEventListener('ended', () => {
+
+          
+            // Start speech recognition after the tone ends
+            recognition.start();
+        });
+    });
+
+    // Capture the result from voice input
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript; // Get the transcribed text
+        searchInput.value = transcript; // Set the text in the input field
+        performGoogleSearch(transcript); // Perform the search automatically
+        const listeningMessage = chatbox.querySelector(".message.bot");
+        if (listeningMessage) {
+            chatbox.removeChild(listeningMessage);
+        }
+        
+    };
+
+
+  
+
+        playSound('end-tone.mp3');
+        
+    // Handle errors
+    recognition.onerror = (event) => {
+        alert(`Error occurred: ${event.error}`);
+    };
+
+    // Perform Google Search
+    function performGoogleSearch(query) {
+        const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        window.open(googleSearchUrl, "_blank"); // Open search in a new tab
+    }
+
+    // Add click event to the search button
+    searchBtn.addEventListener("click", () => {
+        const query = searchInput.value.trim();
+        if (query) {
+            performGoogleSearch(query);
+        } else {
+            alert("Please enter a search query.");
+        }
+    });
+}
+
+
+function playSound(url) {
+  const audio = new Audio(url);  // Create an audio element with the given URL
+  audio.play();  // Play the sound
+}
 
   

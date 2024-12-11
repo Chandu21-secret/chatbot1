@@ -7,32 +7,34 @@
     <link rel="stylesheet" href="chat.css">
 </head>
 <body>
-  
-
-
-  <div class="chat-container">
-    <div class="google-search">
-      <form action="https://www.google.com/search" method="get">
-          <input type="text" name="q" placeholder="Search with Google" />
-          <button type="submit">Search</button>
-      </form>
-  </div>
-    <div class="google-search">
-      <h3 class="google-search">Chat with Bot</h3>
-      
+    <div class="chat-container">
+        <!-- Google Search Section -->
+        <div class="google-search">
+            <h3>Chat with Bot</h3>
+            <form action="https://www.google.com/search" method="get">
+                <input type="text" id="search-input" name="q" placeholder="Search with Google" required />
+                <button type="button" id="voice-search-btn">🎤</button>
+                <button type="submit">Search</button>
+            </form>
+            <div class="chat-output">
+                <!-- Voice search results or chatbot responses will appear here -->
+            </div>
+        </div>
+        
+        <!-- Chatbot Section -->
+        <div class="chat-section">
+            <div class="chatbot" id="chatbox">
+                <!-- Chat messages will appear here -->
+            </div>
+          
+            <!-- Fixed Input Field -->
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type a message..." />
+                <button onclick="sendMessage()" id="send">Send</button>
+           
+        </div>
     </div>
-    <div class="chatbox" id="chatbox">
-      <!-- Messages will appear here -->
-    </div>
-    <div class="input-container">
-      <input type="text" id="userInput" placeholder="Type a message..." />
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
-  
-  <script src="chat.js"></script>
 
-   
-
+    <script src="chat.js"></script>
 </body>
 </html>
